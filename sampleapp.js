@@ -1,18 +1,22 @@
-let num1="123";
-let num2="6";
+let num1 = "123";
+let num2 = "6";
+let store=[];
 
-for(let i=num1.length-1;i>=0;i--){
-	for(let j=num2.length-1;j>=0;j--){ 
-			const result = num1.charAt(i) * num2.charAt(j);
-			console.log("result =", result,"POSITION OF I:",num1.charAt(i),"POSITION OF J",num2.charAt(j));
-			let result1 = result.toString();
-			let result2 = []; 
-			if(result1.length > 1){
- 			console.log("result1.length ", result1.length);
-				let temp = result1.charAt(0);
-				temp = Number(result1)+Number(temp);
-				result2.push(temp);
+for (let i = num1.length - 1; i >= 0; i--) {
+	for (let j = num2.length - 1; j >= 0; j--) {
+		const result = num1.charAt(i) * num2.charAt(j);
+		let result1 = result.toString();
+		for(let k=-1; k<result1.length;k++){
+			if (result1.length >= 1) {
+				let temp = result1.charAt(k);
+				console.log("temptemptemptemp",temp)
+				console.log(Number(result1.charAt(1)))
+				temp = Number(temp) + Number(result1.charAt(1));
+				store.push(temp);
 			}
-			console.log("result2 ", result2);
+			//let temp = Number(temp) + Number(result1.charAt(k));
 		}
 	}
+}
+//store.reverse();
+console.log((store.join("")));
