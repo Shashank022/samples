@@ -1,4 +1,4 @@
-let num1 = "999";
+let num1 = "888";
 let num2 = "6";
 let store=[];
 let resultStore=[];
@@ -23,13 +23,14 @@ let first = position1[0]
 let xylist = Number(position[1]) + Number(position1[0]);
 let listxy = Number(position[2]) + Number(position1[1]);
 let lastItem = position.slice(-1)[0];
+
 if(xylist.toString().length >=2){
     listxy = listxy + Number(xylist.toString().substring(0,1));
     xylist = xylist.toString().substring(1,2)
-
     }
+
 if(listxy.toString().length >=2){
-    lastItem = lastItem + Number(listxy.toString().substring(0,1));
+    lastItem = Number(lastItem) + Number(listxy.toString().substring(0,1));
     listxy = listxy.toString().substring(1,2);
 }
 
