@@ -19,20 +19,20 @@ for (let i = num1.length - 1; i >= 0; i--) {
 console.log("position",position);
 console.log("position1",position1);
 
-let first = position1[0]
-let xylist = Number(position[1]) + Number(position1[0]);
-let listxy = Number(position[2]) + Number(position1[1]);
-let lastItem = position.slice(-1)[0];
+let firstdigit = position1[0]
+let scnddigit = Number(position[1]) + Number(position1[0]);
+let thirddigit = Number(position[2]) + Number(position1[1]);
+let fourthdigit = position.slice(-1)[0];  
 
-if(xylist.toString().length >=2){
-    listxy = listxy + Number(xylist.toString().substring(0,1));
-    xylist = xylist.toString().substring(1,2)
+if(scnddigit.toString().length >=2){
+    thirddigit = thirddigit + Number(scnddigit.toString().substring(0,1));
+    scnddigit = scnddigit.toString().substring(1,2)
     }
 
-if(listxy.toString().length >=2){
-    lastItem = Number(lastItem) + Number(listxy.toString().substring(0,1));
-    listxy = listxy.toString().substring(1,2);
+if(thirddigit.toString().length >=2){
+    fourthdigit = Number(fourthdigit) + Number(thirddigit.toString().substring(0,1));
+    thirddigit = thirddigit.toString().substring(1,2);
 }
 
-resultStore = [lastItem,listxy,xylist,first]
+resultStore = [fourthdigit,thirddigit,scnddigit,firstdigit]
 console.log((resultStore.join("")));
