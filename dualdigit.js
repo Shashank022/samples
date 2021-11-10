@@ -1,5 +1,5 @@
 let num1 = "123";
-let num2 = "5";
+let num2 = "56";
 let store=[];
 let position=[];
 let position1=[];
