@@ -1,9 +1,8 @@
 let num1 = "123";
-let num2 = "6";
+let num2 = "5";
 let store=[];
 let position=[];
 let position1=[];
-let resultStore=[];
 
 for (let i = num1.length - 1; i >= 0; i--) {
     for (let j = num2.length - 1; j >= 0; j--) {
@@ -17,7 +16,15 @@ for (let i = num1.length - 1; i >= 0; i--) {
 }
 for(let k = 0; k < position.length; k++){
     store.push(Number(position1[k])+1);
-    resultStore.push(Number(position[k]) + (Number(position1[k])+1));
 }
- store.reverse();
- console.log((store.join("")));
+
+const rowLen = store.length;
+store.map((element, i, array) => {
+    if (rowLen === i + 1) {
+        element = position1[0];
+        delete array[0];
+        array.splice(0, 0, Number(element))
+    }
+})
+store.reverse();
+console.log((store.join("")));
