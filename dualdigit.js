@@ -1,5 +1,5 @@
-let num1 = "868";
-let num2 = "64";
+let num1 = "849";
+let num2 = "88";
 let store=[];
 let resultStore=[];
 let oddOnes = [];
