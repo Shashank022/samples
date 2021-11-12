@@ -1,8 +1,9 @@
-let num1 = "123";
-let num2 = "56";
+let num1 = "868";
+let num2 = "64";
 let store=[];
-let position=[];
-let position1=[];
+let resultStore=[];
+let oddOnes = [];
+let evenOnes = [];
 
 for (let i = num1.length - 1; i >= 0; i--) {
 	for (let j = num2.length - 1; j >= 0; j--) {
@@ -10,21 +11,34 @@ for (let i = num1.length - 1; i >= 0; i--) {
 		if(result.length <= 1){
 			result = "0"+result;
 		}
-		position.push(result.charAt(0));
-		position1.push(result.charAt(1));
+		store.push(result);
 	}
 }
-for(let k = 0; k < position.length; k++){
-	store.push(Number(position1[k])+1);
+for (let k = 0; k < store.length; k += 2) {
+	oddOnes.push(store[k]);
+	store[k+1] && evenOnes.push(store[k + 1]);
 }
 
-const rowLen = store.length;
-store.map((element, i, array) => {
-	if (rowLen === i + 1) {
-		element = position1[0];
-		delete array[0];
-		array.splice(0, 0, Number(element))
-	}
-})
-store.reverse();
-console.log((store.join("")));
+let firstdigit = oddOnes[0].charAt(1);
+ let scnddigit = Number(oddOnes[0].charAt(0)) + Number(oddOnes[1].charAt(1)) + Number(evenOnes[0].charAt(1));
+ let thirddigit = Number(oddOnes[1].charAt(0)) + Number(oddOnes[2].charAt(1)) + Number(evenOnes[0].charAt(0))+ Number(evenOnes[1].charAt(1));
+let fourthdigit = Number(oddOnes[2].charAt(0)) + Number(evenOnes[1].charAt(0)) + Number(evenOnes[2].charAt(1));
+let fifthdigit = Number(evenOnes[2].charAt(0));
+
+if(scnddigit.toString().length >=2){
+	thirddigit = thirddigit + Number(scnddigit.toString().substring(0,1));
+	scnddigit = scnddigit.toString().substring(1,2)
+}
+
+if(thirddigit.toString().length >=2){
+	fourthdigit = Number(fourthdigit) + Number(thirddigit.toString().substring(0,1));
+	thirddigit = thirddigit.toString().substring(1,2);
+}
+
+if(fourthdigit.toString().length >=2){
+	fifthdigit = Number(fifthdigit) + Number(fourthdigit.toString().substring(0,1));
+	fourthdigit = fourthdigit.toString().substring(1,2);
+}
+
+resultStore = [fifthdigit,fourthdigit,thirddigit,scnddigit,firstdigit]
+console.log((resultStore.join("")));

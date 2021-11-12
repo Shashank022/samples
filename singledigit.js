@@ -1,6 +1,5 @@
 let num1 = "888";
 let num2 = "6";
-let store=[];
 let resultStore=[];
 let position=[];
 let position1=[];
@@ -16,13 +15,10 @@ for (let i = num1.length - 1; i >= 0; i--) {
     }
 }
 
-console.log("position",position);
-console.log("position1",position1);
-
 let firstdigit = position1[0]
 let scnddigit = Number(position[1]) + Number(position1[0]);
 let thirddigit = Number(position[2]) + Number(position1[1]);
-let fourthdigit = position.slice(-1)[0];  
+let fourthdigit = position.slice(-1)[0];
 
 if(scnddigit.toString().length >=2){
     thirddigit = thirddigit + Number(scnddigit.toString().substring(0,1));
