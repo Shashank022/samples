@@ -2,7 +2,7 @@
 let sInput = "PAYPALISHIRING";
 let numRows = 3;
 
-//console.log(reverse(sInput));
+console.log(reverse(sInput));
 arrange(sInput,numRows);
 
 function reverse(s){
